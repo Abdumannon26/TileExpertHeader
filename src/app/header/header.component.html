@@ -1,0 +1,69 @@
+<header class="topbar">
+  <div class="topbar__left">
+    <button class="mobile-menu-btn" type="button" aria-label="Back" (click)="closeSearch()">
+      <span class="mobile-menu-btn__icon" aria-hidden="true"></span>
+    </button>
+    <img class="brand-logo" ngSrc="/assets/icons/brand-logo.svg" width="150" height="56" alt="Teleexpert" priority />
+    <div class="topbar__center">
+      <nav class="menu" [class.menu--hidden]="isSearchOpen()">
+        <span class="menu__item"><img ngSrc="/assets/icons/link.svg" width="24" height="24" alt="" />Ссылки</span>
+        <span class="menu__item"><img ngSrc="/assets/icons/contacts.svg" width="24" height="24" alt="" />Контакты</span>
+        <span class="menu__item"><img ngSrc="/assets/icons/tag.svg" width="24" height="24" alt="" />Теги</span>
+        <span class="menu__item"><img ngSrc="/assets/icons/favorites.svg" width="24" height="24" alt="" />Избранное</span>
+        <span class="menu__item"><img ngSrc="/assets/icons/history.svg" width="24" height="24" alt="" />Посещения</span>
+      </nav>
+    </div>
+    <button
+      class="icon-btn"
+      type="button"
+      aria-label="Search"
+      data-search-toggle
+      (focus)="onSearchIconFocus()"
+      (click)="onSearchIconClick()"
+    >
+      <img ngSrc="/assets/icons/search.svg" width="24" height="24" alt="" />
+    </button>
+    <button class="icon-btn" type="button" aria-label="Add">
+      <img ngSrc="/assets/icons/add2.svg" width="24" height="24" alt="" />
+    </button>
+    <div class="search-area" [class.search-area--open]="isSearchOpen()">
+      <div class="search-track" [class.search-track--expanded]="isSearchOpen()">
+        <app-search-bar [expanded]="isSearchOpen()" (searchFocused)="onSearchTrackFocus()" />
+      </div>
+      @if (isFiltersOpen()) {
+        <app-filters-panel [detailed]="isPanelDetailed()" />
+      }
+    </div>
+    <div class="mobile-actions" aria-hidden="true">
+      <button class="icon-btn icon-btn--mobile" type="button" aria-label="Add">
+        <img ngSrc="/assets/icons/add2.svg" width="24" height="24" alt="" />
+      </button>
+      <button class="icon-btn icon-btn--mobile" type="button" aria-label="History">
+        <img ngSrc="/assets/icons/history.svg" width="24" height="24" alt="" />
+      </button>
+      <button
+        class="icon-btn icon-btn--mobile"
+        type="button"
+        aria-label="Search"
+        data-search-toggle
+        (focus)="onSearchIconFocus()"
+        (click)="onSearchIconClick()"
+      >
+        <img ngSrc="/assets/icons/search.svg" width="24" height="24" alt="" />
+      </button>
+      <button class="notify-btn notify-btn--mobile" type="button" aria-label="Notifications">
+        <img ngSrc="/assets/icons/notifications.svg" width="24" height="24" alt="" />
+        <span class="notify-btn__badge">32</span>
+      </button>
+    </div>
+  </div>
+  <div class="topbar__icons" aria-hidden="true">
+    <button class="notify-btn" type="button" aria-label="Notifications">
+      <img ngSrc="/assets/icons/notifications.svg" width="24" height="24" alt="" />
+      <span class="notify-btn__badge">32</span>
+    </button>
+    <div class="avatar">
+      <img class="avatar__img" ngSrc="/assets/images/ava.jpg" width="32" height="32" alt="" />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+<label class="search-bar" for="header-search-input" [class.search-bar--expanded]="expanded()">
+  <span class="search-bar__icon-left" aria-hidden="true">
+    <img ngSrc="/assets/icons/search.svg" width="14" height="14" alt="" />
+  </span>
+  <input
+    id="header-search-input"
+    class="search-bar__input"
+    type="search"
+    placeholder="Поиск"
+    autocomplete="off"
+    (focus)="onInputFocus()"
+  />
+</label>

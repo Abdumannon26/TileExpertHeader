@@ -1,0 +1,44 @@
+<section class="filters-panel" aria-label="Параметры поиска">
+    <aside class="filters-panel__history">
+      <h3 class="filters-panel__history-title">История</h3>
+      <ul class="filters-panel__history-list">
+        <li>закрепить теги</li>
+        <li>кнопка</li>
+        <li>приложение</li>
+        <li>форма</li>
+        <li>текстовое поле</li>
+        <li>выпадающий список</li>
+      </ul>
+    </aside>
+  <div class="filters-panel__main">
+    <div class="filters-panel__row">
+      <fieldset class="author-fieldset">
+        <legend class="author-fieldset__legend">Автор</legend>
+        <div class="author-field">
+          <input
+            id="filter-author"
+            class="filter-control author-field__input"
+            type="text"
+            placeholder="Имя или должность"
+          />
+          <span class="author-field__suffix" aria-hidden="true">Я</span>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="checks checks--row">
+      <label><input type="checkbox"/> Я участник</label>
+      <label><input type="checkbox"/> В заголовках</label>
+      <label><input type="checkbox"/> Строгий поиск</label>
+    </div>
+
+    <div class="filters-panel__row filters-panel__row--plain">
+      <span class="filter-label">Только</span>
+      <div class="checks checks--row">
+        <label><input type="checkbox"/> Теги</label>
+        <label><input type="checkbox"/> Просьбы</label>
+        <label><input type="checkbox"/> Контакты</label>
+      </div>
+    </div>
+  </div>
+</section>

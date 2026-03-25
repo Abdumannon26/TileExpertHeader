@@ -1,0 +1,125 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin-left: auto;
+  transition:
+    max-width 280ms ease-in-out,
+    transform 280ms ease-in-out;
+  transform-origin: right center;
+}
+
+:host(.expanded) {
+  max-width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  align-items: stretch;
+  height: 48px;
+  padding: 0 0 0 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  background: #fff;
+  transition: border-color 240ms ease-in-out;
+}
+
+.search-bar--expanded {
+  border-color: #c5c5c5;
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.08);
+}
+
+.search-bar:focus-within {
+  border-color: #9ecaf0;
+}
+
+.search-bar__icon-left {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  padding-right: 6px;
+  opacity: 0.55;
+}
+
+.search-bar__icon-left img {
+  display: block;
+}
+
+.search-bar__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color:#9AA1A6;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.search-bar__input::placeholder {
+  color: #a5a5a5;
+}
+
+.search-bar__find {
+  flex-shrink: 0;
+  margin: 2px 2px 2px 6px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 3px;
+  background: #f5c400;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.search-bar__find:hover {
+  filter: brightness(1.05);
+}
+
+.search-bar__chev {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 22px;
+  color: #969696;
+  font-size: 10px;
+}
+
+@media (max-width: 414px) {
+  :host {
+    max-width: 100%;
+  }
+
+  :host(.expanded) {
+    max-width: 100%;
+  }
+
+  .search-bar {
+    border: 0;
+    border-radius: 18px;
+    background: #F5F5F5;
+    padding-left: 12px;
+    box-shadow: none;
+  }
+
+  .search-bar--expanded {
+    border-radius: 24px;
+    box-shadow: none;
+
+  }
+
+  .search-bar__icon-left {
+    display: none;
+  }
+
+  .search-bar__input::placeholder {
+    color: #b2b2b2;
+  }
+}
