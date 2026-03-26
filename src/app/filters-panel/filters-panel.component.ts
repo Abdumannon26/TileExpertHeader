@@ -10,5 +10,4 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class FiltersPanelComponent {
   readonly detailed = input<boolean>(false);
 }
-/* Header */
 

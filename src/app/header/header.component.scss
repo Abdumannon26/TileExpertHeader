@@ -86,7 +86,12 @@
   background: transparent;
   padding: 0;
   cursor: pointer;
+  &:focus {
+    outline: 3px solid red;
+
+  }
 }
+
 
 .mobile-menu-btn,
 .mobile-actions {

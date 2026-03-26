@@ -19,7 +19,6 @@ export class SearchBarComponent {
   }
 
   protected onInputFocus(): void {
-    console.log(1)
     this.searchFocused.emit();
   }
 }

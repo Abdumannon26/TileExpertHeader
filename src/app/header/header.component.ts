@@ -73,7 +73,7 @@ export class HeaderComponent {
     }
   }
 
-  @HostListener('focusout', ['$event'])
+  @HostListener('document:click', ['$event'])
   protected onFocusOut(event: FocusEvent): void {
     if (this.isMobileViewport() && this.isSearchOpen()) {
       return;
@@ -84,9 +84,6 @@ export class HeaderComponent {
       return;
     }
 
-    // In some browsers (notably Safari), `relatedTarget` can be null even when focus moves
-    // inside the component (e.g. click a checkbox in the filters panel). Defer and check
-    // the real activeElement before closing.
     queueMicrotask(() => {
       const active = this.hostRef.nativeElement.ownerDocument.activeElement;
       if (active instanceof Node && this.hostRef.nativeElement.contains(active)) {
@@ -96,13 +93,12 @@ export class HeaderComponent {
     });
   }
 
-  @HostListener('document:mousedown', ['$event'])
+  @HostListener('document:click', ['$event'])
   protected onDocumentMouseDown(event: MouseEvent): void {
     const target = event.target;
     if (!(target instanceof Node)) {
       return;
     }
-
     if (!this.hostRef.nativeElement.contains(target)) {
       this.closeSearch();
     }
